@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DateService } from '../shared/date.service';
 
 @Component({
   selector: 'app-celector',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CelectorComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dateService: DateService) {
+  }
 
   ngOnInit(): void {
   }
