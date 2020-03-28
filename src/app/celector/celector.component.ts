@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DateService } from '../shared/date.service';
 
 @Component({
@@ -6,12 +6,12 @@ import { DateService } from '../shared/date.service';
   templateUrl: './celector.component.html',
   styleUrls: ['./celector.component.scss']
 })
-export class CelectorComponent implements OnInit {
+export class CelectorComponent {
 
-  constructor(private dateService: DateService) {
+  constructor(public dateService: DateService) {
   }
 
-  ngOnInit(): void {
+  go(dir: number) {
+    this.dateService.changeMonth(dir);
   }
-
 }
