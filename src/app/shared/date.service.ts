@@ -21,5 +21,4 @@ export class DateService {
     });
     this.date.next(value);
   }
-
 }
