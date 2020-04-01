@@ -19,6 +19,10 @@ export class OrganizerComponent implements OnInit {
     });
   }
 
+  submit() {
+    const { title } = this.form.value;
 
+    console.log(title);
+  }
 
 }
