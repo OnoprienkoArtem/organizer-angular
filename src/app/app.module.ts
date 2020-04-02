@@ -8,6 +8,7 @@ import { CelectorComponent } from './celector/celector.component';
 import { OrganizerComponent } from './organizer/organizer.component';
 import { MomentPipe } from './shared/moment.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
