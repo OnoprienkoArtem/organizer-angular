@@ -28,7 +28,9 @@ export class OrganizerComponent implements OnInit {
       date: this.dateService.date.value.format('DD-MM-YYYY'),
     };
 
-    console.log(title);
+    this.tasksService.create(task).subscribe(task => {
+      this.form.reset();
+    }, error => console.error(error));
   }
 
 }
