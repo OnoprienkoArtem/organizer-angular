@@ -12,11 +12,11 @@ export interface Task {
 })
 export class TasksService {
 
-  static url = '';
+  static url = 'https://angular-calendar-7fdb5.firebaseio.com/tasks';
 
   constructor(private http: HttpClient) { }
 
-  create(tasks: Task) {
-
+  create(task: Task) {
+    this.http.post<any>(`${TasksService.url}/${task.date}.json`, task);
   }
 }
