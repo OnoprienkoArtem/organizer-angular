@@ -9,6 +9,10 @@ export interface Task {
   date?: string;
 }
 
+export interface CreateResponse {
+  name: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -20,11 +24,11 @@ export class TasksService {
 
   create(task: Task): Observable<Task> {
     return this.http
-      .post<any>(`${TasksService.url}/${task.date}.json`, task)
+      .post<CreateResponse>(`${TasksService.url}/${task.date}.json`, task)
       .pipe(
         map(res => {
           console.log('response in create', res);
-          return res;
+          return { ...task, id: res.name };
         })
       );
   }
