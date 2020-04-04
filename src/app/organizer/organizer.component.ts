@@ -42,4 +42,7 @@ export class OrganizerComponent implements OnInit {
     }, error => console.error(error));
   }
 
+  remove(task: Task) {
+    
+  }
 }
