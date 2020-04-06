@@ -3,6 +3,7 @@ import { DateService } from '../shared/date.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TasksService, Task } from '../shared/tasks.service';
 import { switchMap } from 'rxjs/operators';
+import { log } from 'util';
 
 @Component({
   selector: 'app-organizer',
@@ -37,12 +38,16 @@ export class OrganizerComponent implements OnInit {
     };
 
     this.tasksService.create(task).subscribe(task => {
-      console.log('new task', task);
+      this.tasks.push(task);
       this.form.reset();
     }, error => console.error(error));
   }
 
   remove(task: Task) {
-
+    this.tasksService.remove(task).subscribe(() => {
+        this.tasks = this.tasks.filter(t => t.id !== task.id);
+      },
+      error => console.log(error)
+    );
   }
 }
