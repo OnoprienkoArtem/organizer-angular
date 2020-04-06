@@ -43,6 +43,6 @@ export class OrganizerComponent implements OnInit {
   }
 
   remove(task: Task) {
-    
+
   }
 }
