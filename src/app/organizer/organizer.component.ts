@@ -3,7 +3,6 @@ import { DateService } from '../shared/date.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TasksService, Task } from '../shared/tasks.service';
 import { switchMap } from 'rxjs/operators';
-import { log } from 'util';
 
 @Component({
   selector: 'app-organizer',
